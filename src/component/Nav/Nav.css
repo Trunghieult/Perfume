@@ -1,0 +1,137 @@
+
+.nav-open{
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    z-index: 3;
+}
+
+.nav-all{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(238, 213, 213);
+    align-items: self-start;
+    /* display: none; */
+}
+
+.first{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.nav-cart{
+    margin: 7rem 10rem 0rem 0rem;
+    border: solid black 2px;
+    border-radius: 90%;
+    padding: 2rem;
+    width: 10rem;
+    font-size: 1.3rem;
+}
+.nav-con{
+    margin: 1.4rem 0rem 0rem 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nav-text{
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-headline{
+    transition: transform 0.3s ease-in-out;
+    font-size: 5.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    text-align: left;
+}
+
+.numx{
+    margin-top: 7rem;
+}
+
+.numy{
+    margin-left: 40%;
+}
+
+.numz{
+    margin-left: 14%;
+}
+
+.nav-input{
+    background-color: transparent;
+    border: none;
+    font-size: 5.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    text-align: left;
+    width: 80%;
+    outline: none;
+}
+
+.nav-input:focus{
+    background: url(https://demos.freehtml5.co/aline/premium/assets/images/input-bg.png) transparent no-repeat left bottom;
+}
+
+.icon{
+    font-size: 3rem;
+}
+
+.icon svg{
+    width: 30px;
+    position: relative;  
+    margin-right: 1rem; 
+}
+
+.bottom{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.bottom-credit{
+    position: absolute;
+    margin-left: 40%;
+    bottom: 5%;
+}
+
+.halo{
+    display: flex;
+}
+
+.icon-container{
+    display: flex;
+    margin-right: 6rem;
+}
+
+.nav-headline:hover{
+    cursor: pointer;
+    transform: translateX(25px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-con:hover{
+    .nav-text{
+    transform: translateX(65px);
+    transition: transform 0.3s ease-in-out;
+}}
+
+.nav-cart:hover{
+    cursor: pointer;
+    border: 1px solid black;
+    color: rgb(33, 124, 120);
+}
+
+.hi:hover{
+    color: rgb(33, 124, 120);
+}

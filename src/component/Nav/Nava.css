@@ -1,0 +1,22 @@
+.nav-giday{
+    --distance: 5%;
+    position: fixed;
+    height: 10vh;
+    top: 0;
+    left: var(--distance);
+    width: calc(100% - 2 * var(--distance));
+    z-index: 99;
+}
+
+.nav-all-close{
+    display: flex;
+    flex-direction: row;
+    /* background: rgb(250,235,215);
+    background: linear-gradient(90deg, rgba(250,235,215,1) 27%, rgba(239,230,230,1) 75%); */
+    background-color: transparent;
+    height: 10vh;
+    position: sticky;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
