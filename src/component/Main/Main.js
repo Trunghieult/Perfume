@@ -1,20 +1,30 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import "./Main.css";
+import owner from "./pic/Green Aesthetic Photo Frame Instagram Post.png";
 import Mask from "../Mask/Mask";
-import Fetch from "../fetch/Fetch";
+// import Fetch from "../fetch/Fetch";
 
 const Main = () => {
-  const API_URL = "https://perfume-backend.onrender.com/products?random=9";
-
-  const [dataFetch, setDataFetch] = useState([]);
+  const [value, setValue] = useState("");
+  const [suggestions, setSuggestions] = useState([]);
+  const [hideSuggestions, setHideSuggestions] = useState(true);
 
   useEffect(() => {
-    fetch(API_URL)
-      .then((response) => response.json())
-      .then((data) => setDataFetch(data.list))
-      .catch((error) => console.error(error));
-  }, []);
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(
+          `https://perfume-backend.onrender.com/products?name=${value}`
+        );
+        // console.log(data.list);
+        setSuggestions(res.data.list || []);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [value]);
 
   return (
     <div>
@@ -80,12 +90,43 @@ const Main = () => {
       {/* Search Bar */}
       <div className="search">
         <div className="search-bar">
-          <div className="search-txt">Looking for...</div>
+          <div className="search-txt">What are you looking for...</div>
           <div className="search-name">
             <input
               className="search-input"
-              placeholder="Enter the brand"
-            ></input>
+              type="text"
+              placeholder="Give us the name..."
+              value={value}
+              onChange={(e) => {
+                setValue(e.target.value);
+                setHideSuggestions(false);
+              }}
+              onBlur={() => {
+                setTimeout(() => {
+                  setHideSuggestions(true);
+                }, 100);
+              }}
+              style={{ width: "300px", height: "40px", fontSize: "20px" }}
+            />
+            <div className="bar">
+              {!hideSuggestions && (
+                <div>
+                  <ul>
+                    {suggestions.map((suggestion) => (
+                      <li
+                        key={suggestion.id}
+                        onClick={() => {
+                          setValue(suggestion.title);
+                          setHideSuggestions(true);
+                        }}
+                      >
+                        {suggestion.name}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
           </div>
           <div>{/* <Fetch /> */}</div>
         </div>
@@ -217,29 +258,16 @@ const Main = () => {
               className="trend-img-x"
             ></img>
           </div>
-          <div className="trend-title"> Trending Perfume This Week</div>
-          <div className="trend-txt"> Our Handpicked Fragrance</div>
-          <div className="trend-prod">{/* <Fetch /> */}</div>
-          <body>
-            <div class="slider">
-              <div class="slide-track">
-                <div class="slider">
-                  <div class="slide-track">
-                    {dataFetch.map((product, index) => {
-                      return (
-                        <img
-                          class={`slide-${index + 1}`}
-                          src={product.image[0]}
-                          alt={product.name}
-                          key={product._id}
-                        />
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </body>
+          <div className="trend-title"> Get Discount</div>
+          <div className="trend-txt"> Subscribe To Get 50% OFF Storewide</div>
+          <div className="trend-prod">
+            <input
+              type="text"
+              className="trend-input"
+              placeholder="Email"
+            ></input>
+          </div>
+          <button className="trend-btn">Subscribe</button>
         </div>
         <div className="trend-border">
           <div className="trend-bg-two">
@@ -258,6 +286,61 @@ const Main = () => {
               <div className="trend-txt-one">Buy now</div>
               <div className="trend-txt-two">Limited Offer Ends Tonight</div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Dash */}
+      <div className="mainbanner-line">
+        <div className="dash left"></div>
+        <img
+          src="https://demo.darrelwilson.com/olivia/wp-content/uploads/sites/93/2022/07/11-ESJ32AL-1536x1536.png"
+          className="star"
+          alt=""
+        ></img>
+        <div className="dash right"></div>
+      </div>
+
+      {/* Founder */}
+
+      <div className="founder-con">
+        <div className="founder-bg-img">
+          <img src={owner} className="founder-bg-pic" alt="" />
+        </div>
+        <div className="founder-info">
+          <div className="founder-word">Words from our founder</div>
+          <div className="founder-name">Huong Nguyen</div>
+          <div className="founder-txt">
+            <div className="founder-txt-left">
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
+                tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+              </div>
+              <br></br>
+              <div>
+                Maecenas faucibus mollis interdum. Morbi leo risus, porta ac
+                consectetur ac, vestibulum at eros. Cras mattis consectetur
+                purus sit amet fermentum. Nulla vitae elit libero.
+              </div>
+            </div>
+            <div className="founder-txt-right">
+              Aenean lacinia bibendum nulla sed consectetur. Cras mattis
+              consectetur purus sit amet fermentum. Fusce dapibus, tellus ac
+              cursus commodo, tortor mauris condimentum nibh, ut fermentum massa
+              justo sit amet risus. Nulla vitae elit libero, a pharetra augue.
+              Lorem Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </div>
+          </div>
+          <div className="founder-txt-sign">
+            <img
+              src="https://demo.darrelwilson.com/olivia/wp-content/uploads/sites/93/2022/07/Antonin-Scalia-Signature-2016021501.png"
+              className="founder-txt-sign-pic"
+              alt=""
+            />
+          </div>
+          <div className="founder-txt-name">
+            {" "}
+            Huong Nguyen, Owner Of Olivia & Co{" "}
           </div>
         </div>
       </div>

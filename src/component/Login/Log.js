@@ -12,16 +12,18 @@ const Log = () => {
   };
 
   return (
-    <div className="log">
-      <div className="log-left">
-        <div className="log-con">
-          {isLogin ? <Login /> : <Register />}
-          <div onClick={handleToggle} className="log-con-ch">
-            {isLogin ? "Register" : "Login"}
+    <div>
+      <div className="log">
+        <div className="log-left">
+          <div className="log-con">
+            {isLogin ? <Login /> : <Register />}
+            <div onClick={handleToggle} className="log-con-ch">
+              {isLogin ? "Register" : "Login"}
+            </div>
           </div>
         </div>
+        <Mask />
       </div>
-      <Mask />
     </div>
   );
 };

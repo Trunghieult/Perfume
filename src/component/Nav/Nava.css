@@ -1,11 +1,15 @@
 .nav-giday{
-    --distance: 5%;
+
     position: fixed;
     height: 10vh;
     top: 0;
-    left: var(--distance);
-    width: calc(100% - 2 * var(--distance));
+    width: 100%;
     z-index: 99;
+
+}
+
+.change{
+    background-color: blue;
 }
 
 .nav-all-close{
@@ -17,6 +21,7 @@
     height: 10vh;
     position: sticky;
     width: 100%;
-    justify-content: space-between;
+    justify-content: space-around;
+    margin-top: 2rem;
     align-items: center;
 }

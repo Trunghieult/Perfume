@@ -1,4 +1,4 @@
-.grid-img {
+/* .grid-img {
     width: 100%;
     margin: auto;
     display: grid;
@@ -65,4 +65,15 @@
     grid-column-start: 5;
     grid-column-end: 5;
     height: 80%;
+  } */
+
+
+  .bar{ 
+    height: 20vh;
+    overflow-y: scroll;
+
+  }
+
+  .bar::-webkit-scrollbar{
+    display: none;
   }

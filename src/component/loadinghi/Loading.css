@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 body {
     /* position: relative; */
     height: 100vh;
@@ -13,7 +15,8 @@ svg {
   }
   
 text {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: 'Great Vibes', cursive;
     font-size: 8rem;
     stroke: black;
     stroke-width: 2px;

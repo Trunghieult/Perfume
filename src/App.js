@@ -7,17 +7,22 @@ import Loading from "./component/loadinghi/Loading";
 import Nava from "./component/Nav/Nava";
 import Log from "./component/Login/Log";
 import Fetch from "./component/fetch/Fetch";
+import Menu from "./component/Menu/Menu";
+import Footer from "./component/footer/Footer";
+import { useEffect } from "react";
 
 function App() {
   return (
     <div className="App">
       {/* <Loading /> */}
       <Nava />
-      <Nav />
-      {/* <Main /> */}
+      {/* <Nav /> */}
+      <Main />
       {/* <Log /> */}
       {/* <Nav /> */}
       {/* <Fetch /> */}
+      {/* <Menu /> */}
+      <Footer />
     </div>
   );
 }

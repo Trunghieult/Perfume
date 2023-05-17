@@ -4,6 +4,8 @@ import {
   FacebookOutlined,
   InstagramOutlined,
   TwitterOutlined,
+  ShoppingCartOutlined,
+  SearchOutlined,
 } from "@ant-design/icons";
 
 const Nav = () => {
@@ -23,16 +25,23 @@ const Nav = () => {
                 <span className="hi">UNISEX</span>
               </div>
             </div>
-            <div className="nav-cart">YOUR CART</div>
+            <div className="nav-cart">
+              <div>YOUR CART</div>
+              <ShoppingCartOutlined />
+            </div>
           </div>
           <div className="nav-con numy">
             <div className="nav-text">YOU LOOKING FOR...</div>
-            <div className="nav-headline">
+            <div className="nav-headline otd">
+              {/* <SearchOutlined /> */}
               <input
                 type="text"
                 className="nav-input"
                 placeholder="find it here"
               />
+              <div className="nav-search">
+                <SearchOutlined />
+              </div>
             </div>
           </div>
           <div className="nav-con numz">

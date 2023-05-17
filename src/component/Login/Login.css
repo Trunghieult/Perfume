@@ -99,6 +99,8 @@
     width: 50%;
     flex-direction: column;
     margin-top: 8%;
+    margin-left: 5%;
+
 }
 
 .log>button{

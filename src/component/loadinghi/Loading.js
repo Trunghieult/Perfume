@@ -6,7 +6,7 @@ const Loading = () => {
     <div>
       <svg>
         <text x="0" y="100">
-          Thom Perfume
+          Olivia & Co.
         </text>
       </svg>
     </div>
